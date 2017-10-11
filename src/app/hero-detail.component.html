@@ -1,0 +1,21 @@
+<div *ngIf="hero">
+  <h2>{{hero.name}} details!</h2>
+  <div>
+    <label>id: </label>{{hero.id}}</div>
+  <div>
+    <label>Nome: </label>
+    <input [(ngModel)]="hero.name" placeholder="Nome" />
+    <br/>
+    <label>Sigla: </label>
+    <input [(ngModel)]="hero.small" placeholder="Sigla" />
+    <br/>
+    <label>Grupo: </label>
+    <input [(ngModel)]="hero.group" placeholder="Grupo" />
+    <br/>
+    <label>Peso: </label>
+    <input [(ngModel)]="hero.molar" placeholder="Peso" />
+    <br/>
+   </div>
+  <button (click)="goBack()">Voltar</button>
+  <button (click)="save()">Salvar</button>
+</div>

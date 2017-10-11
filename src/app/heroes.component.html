@@ -1,0 +1,25 @@
+<h2>Elementos cadastrados</h2>
+<div>
+  <label>Nome do elemento:</label> <input #heroName />
+  <button (click)="add(heroName.value); heroName.value=''">
+    Adicionar
+  </button>
+</div>
+<ul class="heroes">
+  <li *ngFor="let hero of heroes" (click)="onSelect(hero)"
+      [class.selected]="hero === selectedHero">
+    <span class="badge">{{hero.id}}</span>
+    <span>{{hero.name}}</span>
+    <button class="delete"
+      (click)="delete(hero); $event.stopPropagation()">x</button>
+  </li>
+</ul>
+<div *ngIf="selectedHero">
+  <h2>
+    {{selectedHero.name | uppercase}}:
+  </h2>
+  {{selectedHero.group}} <br/>
+  {{selectedHero.small}} <br/>
+  {{selectedHero.molar}} <br/><br/>
+  <button (click)="gotoDetail()">Ver Detalhes</button>
+</div>
